@@ -34,10 +34,13 @@ var Calculator = {}
     Calculator.multiply = function (num1, num2) {return num1 * num2}
     Calculator.divide = function(num1, num2) {return num1 / num2}
 
-function actionApplyer(action1, []) {
-        if ([].length == 0) {
-            return action1
+function actionApplyer(num1, array) {
+        if (array.length == 0) {
+            return num1
         } else {
-            
+            for(let i = 0; i < array.length; i++) {
+                num1 = array[i](num1)
+            }
+            return num1
         }
-}
+    }
